@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 1rem;
+    box-sizing: border-box;
+    color: #FAFAFA;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(34, 44, 104), rgb(144, 95, 159));
+    background-size: cover;
+}
+
+.container {
+    min-height: 900px;
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*-webkit-box-shadow: -1px 1px 39px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 39px 6px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 39px 6px rgba(0, 0, 0, 0.75); */
+    border-radius: 0.2rem;
+}
+
+.gpsLogo {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transition: 0.5s;
+}
+
+.gpsLogo:hover {
+    transform: rotate(360deg);
+}
+
+h1 {
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+input {
+    text-align: center;
+    outline: none;
+    border-radius: 2rem;
+    height: 3rem;
+    width: 20rem;
+    font-size: 1.3rem;
+    margin: 1rem 0 1rem 0;
+    background-color: transparent;
+    color: #FAFAFA;
+    caret-color: #FAFAFA;
+    border: 2px solid transparent;
+}
+
+input:focus {
+    border: 2px solid red;
+}
+
+button {
+    width: 20%;
+    background-color: transparent;
+    border: 2px solid #FAFAFA;
+    border-radius: 2rem;
+    outline: none;
+    height: 2rem;
+    width: 8rem;
+    transition: 0.5s;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    color: black;
+    border: 2px solid black;
+}
+
+.weatherIcon {
+    margin: 1rem 0 1rem 0;
+}
+
+p {
+    height: 50px;
+    font-weight: 700;
+}
+
+.temperature {
+    font-size: 3rem;
+}
+
+.temperature:hover {
+    cursor: pointer;
+}
+
+.city {
+    font-size: 2rem;
+}
+
+.country {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+}
