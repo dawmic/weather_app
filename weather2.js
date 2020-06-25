@@ -45,10 +45,10 @@ async function fetchWeather() {
         let data = await response.json();
         const [weather, ...other] = data;
         //console.log(data);
-        resultTemp = Math.round((weather.Temperature.Value - 32) * 5 / 9) + '° C';
+        resultTemp = Math.round((weather.Temperature.Value - 32) * 5 / 9);
         console.log(resultTemp);
         iconNumber = weather.WeatherIcon;
-        temperature.textContent = resultTemp;
+        temperature.textContent = resultTemp + ' ° C';
         icon.setAttribute('src', `icons/${iconNumber}.png`);
         description.textContent = weather.IconPhrase + ' | Precipitation ' + weather.PrecipitationProbability + '%';
     } catch (error) {
@@ -99,3 +99,11 @@ async function fetchAsyncGeolocation() {
 }
 
 gpsLogo.addEventListener('click', fetchAsyncGeolocation);
+
+temperature.addEventListener('click', () => {
+    if (temperature.textContent.includes('C'))
+        temperature.textContent = Math.round(resultTemp * 1.8 + 32) + '° F';
+    else {
+        temperature.textContent = resultTemp + '° C';
+    }
+});
