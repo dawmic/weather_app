@@ -30,7 +30,15 @@ async function fetchLocation() {
         fetchWeather();
     } catch (error) {
         console.error(error);
-        city.textContent = 'no city name provided';
+        city.textContent = 'You did not enter a city';
+        country.textContent = '-';
+        temperature.textContent = '-';
+        description.textContent = '-';
+        country.textContent = '-';
+        icon.setAttribute('src', `#`);
+
+
+
 
     }
 
@@ -93,7 +101,9 @@ async function fetchAsyncGeolocation() {
         fetchWeather();
     } catch (err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
-        temperature.textContent = 'Geolocation did not get data';
+        city.textContent = 'Please wait for geolocation data';
+        fetchAsyncGeolocation();
+
     }
 
 }
@@ -107,3 +117,5 @@ temperature.addEventListener('click', () => {
         temperature.textContent = resultTemp + '° C';
     }
 });
+
+window.addEventListener('load', fetchAsyncGeolocation);
